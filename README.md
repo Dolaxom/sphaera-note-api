@@ -1,4 +1,4 @@
-# Sphaera, work
+# Sphaera, work in progress
 
 ![design](misc/images/software-design.png)
 
