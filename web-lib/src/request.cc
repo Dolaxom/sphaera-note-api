@@ -51,4 +51,26 @@ std::unordered_map<std::string, std::string> Request::GetHeaders() const {
   return headers_;
 }
 
+Request CreateFromCrow(const crow::request& crow_req) {
+  Request req;
+  HttpMethod method;
+
+  static std::unordered_map<crow::HTTPMethod, weblib::HttpMethod> relations {
+    {crow::HTTPMethod::GET, weblib::HttpMethod::GET},
+    {crow::HTTPMethod::POST, weblib::HttpMethod::POST},
+    {crow::HTTPMethod::DELETE, weblib::HttpMethod::DELETE},
+    {crow::HTTPMethod::PUT, weblib::HttpMethod::PUT}
+  };
+
+  req.SetMethod(relations.at(crow_req.method));
+  req.SetRawUrl(crow_req.raw_url);
+  req.SetUrl(crow_req.url);
+  req.SetBody(crow_req.body);
+  for (const auto& header : crow_req.headers) {
+    req.AddHeader(header.first, header.second);
+  }
+
+  return req;
+}
+
 } // namespace weblib 
