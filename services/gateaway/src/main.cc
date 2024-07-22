@@ -1,11 +1,7 @@
-#include "crow.h"
+#include "routes/route.h"
 
 int main() {
-  crow::SimpleApp app;
+  GatewayServer server{8080};
 
-  CROW_ROUTE(app, "/")([]() {
-    return "Hello world";
-  });
-
-  app.port(18080).run();
+  server.Start();
 }

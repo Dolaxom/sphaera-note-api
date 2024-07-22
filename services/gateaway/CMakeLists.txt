@@ -6,10 +6,17 @@ set(CMAKE_CXX_STANDARD 20)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-find_package(Crow REQUIRED)
+set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/../../web-lib/build/")
 
-set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Crow REQUIRED)
 find_package(Threads REQUIRED)
 
-add_executable(gateway src/main.cc)
-target_link_libraries(gateway PRIVATE Crow::Crow Threads::Threads)
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/../../web-lib weblib_build)
+
+add_executable(gateway src/main.cc src/routes/route.cc src/routes/route.h)
+target_link_libraries(gateway PRIVATE weblib Crow::Crow Threads::Threads)
+
+include_directories(gateway PRIVATE ../../web-lib/src)
+
