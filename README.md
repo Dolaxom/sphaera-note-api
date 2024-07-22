@@ -10,3 +10,6 @@ Services:
 * todo
 
 Databases: PostgreSQL, Redis
+
+Working notes:
+Sphaera -> Sfaera?
