@@ -40,6 +40,6 @@ private:
   string remote_ip_address_; // TODO
 };
 
-Request CreateFromCrow(const crow::request& crow_req);
+[[maybe_unused]] Request CreateFromCrow(const crow::request& crow_req);
 
 } // namespace weblib

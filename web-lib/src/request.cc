@@ -51,7 +51,7 @@ std::unordered_map<std::string, std::string> Request::GetHeaders() const {
   return headers_;
 }
 
-Request CreateFromCrow(const crow::request& crow_req) {
+[[maybe_unused]] Request CreateFromCrow(const crow::request& crow_req) {
   Request req;
   HttpMethod method;
 
