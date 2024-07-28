@@ -1,3 +1,10 @@
+/**
+ * @file request.h
+ * @brief Custom request type.
+ *
+ * Структура данных для хранения и обработки запросов от клиентов.
+ */
+
 #pragma once
 
 #include <string>

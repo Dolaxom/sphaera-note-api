@@ -1,3 +1,10 @@
+/**
+ * @file types.h
+ * @brief Custom types aliases.
+ *
+ * Кастомные типы данных для использованиях во всех микросервисах.
+ */
+
 #pragma once
 
 #include <cstdint>

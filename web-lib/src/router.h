@@ -1,3 +1,12 @@
+/**
+ * @file router.h
+ * @brief Backend routers.
+ *
+ * Разнообразные классы router для маппинга url-s и их хендлеров:
+ * 1) Базовый интерфейс Router.
+ * 2) Роутер на основе crowcp - RouterCrow.
+ */
+
 #pragma once
 
 #include <string>

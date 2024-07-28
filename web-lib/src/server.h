@@ -1,3 +1,12 @@
+/**
+ * @file server.h
+ * @brief HTTP Servers.
+ *
+ * Разнообразные типы серверов:
+ * 1) Интерфейс-сервер BaseServer.
+ * 2) Сервер на основе crowcpp - CrowServer.
+ */
+
 #pragma once
 
 #include <memory>
