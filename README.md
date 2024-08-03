@@ -1,4 +1,4 @@
-# Sphaera, work in progress
+# Sphaera monorepo, work in progress
 
 ![design](misc/images/software-design.png)
 
