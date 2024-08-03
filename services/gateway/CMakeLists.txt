@@ -20,3 +20,8 @@ target_link_libraries(gateway PRIVATE weblib Crow::Crow Threads::Threads)
 
 include_directories(gateway PRIVATE ../../web-lib/src)
 
+set(SOURCE_FILE ${CMAKE_SOURCE_DIR}/data/.env)
+add_custom_command(TARGET gateway POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    ${SOURCE_FILE} ${CMAKE_BINARY_DIR}/bin/.env
+)

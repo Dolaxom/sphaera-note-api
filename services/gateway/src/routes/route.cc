@@ -1,6 +1,6 @@
 #include "route.h"
 
-void test(weblib::Request req) {
+void test(const weblib::Request& req) {
 
 }
 

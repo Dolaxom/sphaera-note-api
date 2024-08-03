@@ -1,8 +1,8 @@
 #include "server.h"
 
-class GatewayServer : public weblib::CrowServer {
+class GatewayServer final : public weblib::CrowServer {
 public:
-  GatewayServer(uint16 port);
+  explicit GatewayServer(uint16 port);
 
   void Start() override;
 };
