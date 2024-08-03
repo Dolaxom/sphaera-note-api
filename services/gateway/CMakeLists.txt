@@ -8,6 +8,8 @@ conan_basic_setup()
 
 set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/../../web-lib/build/")
 
+find_package(Protobuf REQUIRED)
+find_package(gRPC REQUIRED)
 find_package(Crow REQUIRED)
 find_package(Threads REQUIRED)
 
@@ -15,8 +17,17 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/../../web-lib weblib_build)
 
-add_executable(gateway src/main.cc src/routes/route.cc src/routes/route.h)
-target_link_libraries(gateway PRIVATE weblib Crow::Crow Threads::Threads)
+add_executable(gateway
+    src/main.cc
+    src/routes/route.cc
+    src/routes/route.h
+
+)
+target_link_libraries(gateway PRIVATE
+    weblib Crow::Crow
+    Threads::Threads
+    gRPC::grpc++
+)
 
 include_directories(gateway PRIVATE ../../web-lib/src)
 
