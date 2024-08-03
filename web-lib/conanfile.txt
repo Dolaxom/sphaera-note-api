@@ -1,5 +1,6 @@
 [requires]
 crowcpp-crow/1.2.0
+grpc/1.65.0
 
 [generators]
 cmake
