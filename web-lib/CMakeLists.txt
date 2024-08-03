@@ -18,6 +18,8 @@ add_library(weblib
   src/server.h
   src/request.cc
   src/request.h
+  src/dotenv.h
+  src/dotenv.cc
 
   src/types.h
 )
