@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package auth;
+package authorization;
 
-service Authorization {
+service AuthorizationService {
     rpc SignUp(SignUpRequest) returns (SignUpResponse);
     rpc SignIn(SignInRequest) returns (SignInResponse);
     rpc ValidToken(ValidTokenRequest) returns (ValidTokenResponse);

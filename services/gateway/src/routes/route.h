@@ -1,4 +1,5 @@
 #include "server.h"
+#include "../grpc/client.h"
 
 class GatewayServer final : public weblib::CrowServer {
 public:
